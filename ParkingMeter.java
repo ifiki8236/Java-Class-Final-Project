@@ -1,13 +1,13 @@
 public class ParkingMeter {
     
-    private int purchasedMin;
+    private static int purchasedMin;
 
     public ParkingMeter(int purchasedMin) {
-        this.purchasedMin = purchasedMin;
+        ParkingMeter.purchasedMin = purchasedMin;
     }
 
     public void setMinutes(int purchasedMin) {
-        this.purchasedMin = purchasedMin;
+        ParkingMeter.purchasedMin = purchasedMin;
     }
     public int getMinutes() {
         return purchasedMin;
