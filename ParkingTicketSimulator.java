@@ -3,7 +3,7 @@
 public class ParkingTicketSimulator {
     public static void main(String args[]) {
         String [] [] vehicle_information = {{"nissan", "altima", "white-gray", "TRUMP24"},{"toyota", "corolla", "dark blue", "TUF5602"},{"dodge", "charger", "red and gold", "EY67354"}}; //makeOfCar = {"altima"}, colorOfCar = {"blue"}, carPlate = "EY67354";
-        int[] minutesParked = {3645, 482, 65};
+        int[] minutesParked = {1001, 482, 65};
         int[] purchasedMin = {1000, 543, 60}; 
         String[] policeName = {"Michael Vick", "Sarai McKenneth Bartley", "Leroy Jenkis"};
         int[] policeBadge = {597, 802, 420};
@@ -21,7 +21,7 @@ public class ParkingTicketSimulator {
         // String theFinalVerdict2 = PoliceOfficer.issueTicket(car2, police2);
         // String theFinalVerdict3 = PoliceOfficer.issueTicket(car3, police3);
 
-        System.out.println("First ticket:");
+        //System.out.println("First ticket:");
         System.out.println(theFinalVerdict1);
         // System.out.println("\nFirst ticket:");
         // System.out.println(theFinalVerdict2);
