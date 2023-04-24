@@ -1,11 +1,11 @@
-public class ParkingTicket extends ParkedCar{
+public class ParkingTicket extends ParkedCar {
     
+    //private ParkingMeter purchasedMin = new ParkingMeter(getPurchasedMin());
     private String officerName;
     private int officerBadge;
 
     private static int fine;
-    private static int minutesParked;
-    private static int purchasedMin;
+    private int purchasedMin;
 
     private final static int FIRST_HR_FINE = 25;
     private final static int HOUR = 60;
@@ -13,12 +13,11 @@ public class ParkingTicket extends ParkedCar{
 
     private static String issuedTicket = "";
 
-    public ParkingTicket(String modelOfCar, String makeOfCar, String colorOfCar, String carPlate, int minutesParked, PoliceOfficer officer, int purchasedMin) {
+    public ParkingTicket(String modelOfCar, String makeOfCar, String colorOfCar, String carPlate, int minutesParked, PoliceOfficer officer, ParkingMeter purchasedMin) {
         super(modelOfCar, makeOfCar, colorOfCar, carPlate, minutesParked);
         this.officerName = officer.getOfficer();
         this.officerBadge = officer.getBadge();
-        ParkingTicket.purchasedMin = purchasedMin;
-        ParkingTicket.minutesParked = minutesParked;
+        this.purchasedMin = purchasedMin.getMinutes();
     }
     
     public String getModel() {
@@ -42,10 +41,10 @@ public class ParkingTicket extends ParkedCar{
     public int getMinutesParked() {
         return minutesParked;
     }
-    public static int getPurchasedMin() {
+    public int getPurchasedMin() {
         return purchasedMin;
     }
-    public static int calculateFine() {
+    public static int calculateFine(int minutesParked, int purchasedMin) {
         double excessHours = 0.0;
         int illegalMin = 0;
             illegalMin = minutesParked - purchasedMin;
@@ -57,9 +56,9 @@ public class ParkingTicket extends ParkedCar{
             //System.out.println(excessHours+" ");
         return fine;
     }
-    public static String toString(ParkedCar vehicle, PoliceOfficer officer, boolean violation) {
+    public static String toString(ParkedCar vehicle, PoliceOfficer officer, boolean violation, ParkingTicket purchasedMin) {
         if(violation == true) {
-            ParkingTicket.calculateFine();
+            calculateFine(purchasedMin.minutesParked, purchasedMin.getPurchasedMin());
             issuedTicket = "Make: "+vehicle.getMake()+"\n"+
                     "Model: "+vehicle.getModel()+"\n"+
                     "Color: "+vehicle.getColor()+"\n"+

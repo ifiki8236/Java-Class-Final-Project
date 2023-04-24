@@ -20,11 +20,11 @@ public class PoliceOfficer {
     public int getBadge() {
         return officerBadge;
     }
-    public static String issueTicket(ParkedCar vehicle, PoliceOfficer officer) {
-        if(vehicle.getMinutes() > ParkingTicket.getPurchasedMin()) {
+    public static String issueTicket(ParkedCar vehicle, PoliceOfficer officer, ParkingTicket minutes) {
+        if(vehicle.getMinutes() > minutes.getPurchasedMin()) {
             violation = true;
         }
-        theTicket = ParkingTicket.toString(vehicle, officer, violation);
+        theTicket = ParkingTicket.toString(vehicle, officer, violation, minutes);
         return theTicket;
     }
 }
