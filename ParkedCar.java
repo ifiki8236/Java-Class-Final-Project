@@ -1,9 +1,9 @@
 public class ParkedCar {
-    protected String makeOfCar;
-    protected String modelOfCar;
-    protected String colorOfCar;
-    protected String carPlate;
-    protected int minutesParked;
+    private String makeOfCar;
+    private String modelOfCar;
+    private String colorOfCar;
+    private String carPlate;
+    private int minutesParked;
 
 
     public ParkedCar(String modelOfCar, String makeOfCar, String colorOfCar, String carPlate, int minutesParked) {
