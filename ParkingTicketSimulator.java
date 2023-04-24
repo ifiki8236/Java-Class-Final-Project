@@ -24,7 +24,7 @@ public class ParkingTicketSimulator {
             if (carInfo[3].length() == 7) {
                 break;
             } else {
-                System.out.print("License Plate Must Be 7 Characters Long: ");
+                System.out.print("7 characters only: ");
             }
         }
     }
@@ -47,7 +47,7 @@ public class ParkingTicketSimulator {
         System.out.print("Enter Color: ");
         carInfo[2] = keyboard.nextLine();
 
-        System.out.print("Enter License Plate: ");
+        System.out.print("Enter License Plate(License Plate Must Be 7 Characters Long): ");
         checkLen(carInfo, keyboard);
 
         System.out.print("Enter The Minutes Purchased: ");
