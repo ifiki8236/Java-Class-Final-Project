@@ -47,12 +47,5 @@ public class ParkedCar {
         return minutesParked;
     }
     
-    // public void copyValue() {
-        
-    // }
-    // public String toString(int minutesParked) {
-    //     String minuteString = toString(minutesParked);
-    //     return minuteString;
-    // }
     
 }

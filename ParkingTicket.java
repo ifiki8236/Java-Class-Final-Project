@@ -1,13 +1,8 @@
 public class ParkingTicket extends ParkedCar{
-    //string objects to reference car objects
-    // private String model;
-    // private String make;
-    // private String color;
-    // private String license;
+    
     private String officerName;
     private int officerBadge;
 
-    //strings to calculate
     private static int fine;
     private static int minutesParked;
     private static int purchasedMin;
@@ -25,19 +20,6 @@ public class ParkingTicket extends ParkedCar{
         ParkingTicket.purchasedMin = purchasedMin;
         ParkingTicket.minutesParked = minutesParked;
     }
-    
-
-    // public ParkingTicket(ParkedCar car, PoliceOfficer officer, int purchasedMin){
-    //     this.model = car.getModel();
-    //     this.make = car.getMake();
-    //     this.color = car.getColor();
-    //     this.license = car.getCarPlate();
-    //     this.officerName = officer.getOfficer();
-    //     this.officerBadge = officer.getBadge();
-    //     ParkingTicket.purchasedMin = purchasedMin;
-    //     ParkingTicket.minutesParked = car.getMinutes();
-    // }
-
     
     public String getModel() {
         return modelOfCar;
@@ -91,7 +73,5 @@ public class ParkingTicket extends ParkedCar{
         }
         return issuedTicket;
     }      
-    // public int getFine() {
-    //     return fine;
-    // }
+    
 }
