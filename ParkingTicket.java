@@ -1,23 +1,28 @@
-public class ParkingTicket extends ParkedCar {
+public class ParkingTicket {
     
     //private ParkingMeter purchasedMin = new ParkingMeter(getPurchasedMin());
     private String officerName;
     private int officerBadge;
-
-    private static int fine;
+    private String modelOfCar, makeOfCar, colorOfCar, carPlate;
+    private int minutesParked;
     private int purchasedMin;
 
     private final static int FIRST_HR_FINE = 25;
     private final static int HOUR = 60;
     private final static int HRS_AFTER_FINE = 10;
 
+    private static int fine;
     private static String issuedTicket = "";
 
-    public ParkingTicket(String modelOfCar, String makeOfCar, String colorOfCar, String carPlate, int minutesParked, PoliceOfficer officer, ParkingMeter purchasedMin) {
-        super(modelOfCar, makeOfCar, colorOfCar, carPlate, minutesParked);
+    public ParkingTicket( ParkedCar theCar, PoliceOfficer officer, ParkingMeter purchasedMin) {
         this.officerName = officer.getOfficer();
         this.officerBadge = officer.getBadge();
         this.purchasedMin = purchasedMin.getMinutes();
+        this.modelOfCar = theCar.getModel();
+        this.makeOfCar = theCar.getMake();
+        this.colorOfCar = theCar.getColor();
+        this.carPlate = theCar.getCarPlate();
+        this.minutesParked = theCar.getMinutes();
     }
     
     public String getModel() {

@@ -10,9 +10,9 @@ public class ParkingTicketSimulator {
                 keyboard.nextLine();
                 break;
             } else {
-                System.out.println("Invalid input. Numbers Only.");
+                System.out.println("\tInvalid input. Numbers Only.");
                 keyboard.nextLine();
-                System.out.print("Try Again: ");
+                System.out.print("\tTry Again: ");
             }
         }
         return numberInput;
@@ -24,7 +24,7 @@ public class ParkingTicketSimulator {
             if (carInfo[3].length() == 7) {
                 break;
             } else {
-                System.out.print("7 characters only: ");
+                System.out.print("\t7 characters only: ");
             }
         }
     }
@@ -61,14 +61,15 @@ public class ParkingTicketSimulator {
 
         System.out.print("Deputy Badge Number: ");
         theBadge = checkDataType(keyboard);
-      
+
+        ParkedCar theCar = new ParkedCar(carInfo[0], carInfo[1], carInfo[2], carInfo[3], parkedMinutes);
         PoliceOfficer deputyInfo = new PoliceOfficer(theBadge, nameOfOfficer);
         ParkingMeter purchasedMin = new ParkingMeter(boughtMinutes);
-        ParkingTicket civillianVehicle = new ParkingTicket(carInfo[0], carInfo[1],  carInfo[2], carInfo[3], parkedMinutes, deputyInfo, purchasedMin);
+        ParkingTicket civillianVehicle = new ParkingTicket(theCar, deputyInfo, purchasedMin);
        
-        String theFinalVerdict = PoliceOfficer.issueTicket(civillianVehicle, deputyInfo, civillianVehicle);
+        String theFinalVerdict = PoliceOfficer.issueTicket(theCar, deputyInfo, civillianVehicle);
         
-        System.out.println("\nInfraction Outcome:"+theFinalVerdict);
+        System.out.println("\nInfraction Outcome:\n"+theFinalVerdict);
         
         keyboard.close();
     }
